@@ -2,9 +2,9 @@ var Bagpipe = require('bagpipe')
 var fs = require("fs");
 var request = require("request");
 
-var bou = [115.08179, 30.68516, 122.13501, 35.16483];//下载范围
+var bou = [120, 36, 126, 39];//下载范围
 var Minlevel = 1;//最小层级
-var Maxlevel = 16;//最大层级
+var Maxlevel = 12;//最大层级
 var token = 'a4ee5c551598a1889adfabff55a5fc27';//天地图key(如果失效去天地图官网申请)
 var zpath = './tiles' // 瓦片目录
 var speed = 10;//并发数

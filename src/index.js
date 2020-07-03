@@ -2,12 +2,12 @@ var Bagpipe = require('bagpipe')
 var fs = require("fs");
 var request = require("request");
 
-var bou = [113.68652, 30.00000, 122.29980, 36.08462];//下载范围
+var bou = [-179.9, -89.9, 179.9, 89.9];//下载范围
 var Minlevel = 1;//最小层级
-var Maxlevel = 16;//最大层级
+var Maxlevel = 5;//最大层级
 var token = 'a4ee5c551598a1889adfabff55a5fc27';//天地图key(如果失效去天地图官网申请)
-var zpath = './tiles' // 瓦片目录
-var speed = 100;//并发数
+var zpath = './tiles-ht' // 瓦片目录
+var speed = 50;//并发数
 var mapstyle = 'img_w';//地图类型(img_w:影像底图 cia_w:影像标注 vec_w:街道底图 cva_w街道标注)
 
 
@@ -121,7 +121,8 @@ function task() {
  */
 function download(x, y, z) {
     var ts = Math.floor(Math.random() * 8)//随机生成0-7台服务器
-    let imgurl = `http://t${ts}.tianditu.gov.cn/DataServer?T=${mapstyle}&x=${x}&y=${y}&l=${z}&tk=${token}`;
+    let imgurl = `http://www.oceanread.com:213/arcgis/rest/services/chart/chartAll/MapServer/tile/${z}/${y}/${x}`;
+    //let imgurl = `http://t${ts}.tianditu.gov.cn/DataServer?T=${mapstyle}&x=${x}&y=${y}&l=${z}&tk=${token}`;
     var ip = Math.floor(Math.random() * 256)//随机生成IP迷惑服务器
         + "." + Math.floor(Math.random() * 256)
         + "." + Math.floor(Math.random() * 256)
