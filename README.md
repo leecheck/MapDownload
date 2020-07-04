@@ -1,4 +1,6 @@
-# MapDownload
+# forked from MapDownload
+
+接下来做一些改造，主要用来下载（白嫖 划掉）一些比较有特色的的瓦片地图
 
 > 天地图地图资源下载器 支持地图类型 球面墨卡托投影(img_w:影像底图 cia_w:影像标注 vec_w:街道底图 cva_w街道标注)
 
